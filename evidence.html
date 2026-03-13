@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="bg">
+
+<div class="card">
+
+<h2>Submit Evidence</h2>
+
+<p>Platform: {{platform}}</p>
+
+<form action="/analyze" method="post" enctype="multipart/form-data">
+
+<input name="userid" placeholder="Enter Username or Phone Number">
+
+<br><br>
+
+<label>Upload Screenshot Proof</label>
+
+<br>
+
+<input type="file" name="screenshot" id="screenshot">
+
+<br><br>
+
+<img id="preview" width="250">
+
+<br><br>
+
+<textarea name="message" placeholder="Paste conversation text"></textarea>
+
+<br><br>
+
+<button type="submit">Analyze Conversation</button>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("screenshot").onchange = function(e){
+
+let file = e.target.files[0]
+
+let reader = new FileReader()
+
+reader.onload = function(){
+
+document.getElementById("preview").src = reader.result
+
+}
+
+reader.readAsDataURL(file)
+
+}
+
+</script>
+
+</body>
+</html>

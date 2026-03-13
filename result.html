@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="bg">
+
+<div class="card">
+
+<h1>Analysis Result</h1>
+
+<h2>Risk Level: {{ risk_level }}</h2>
+
+<h3>Risk Score: {{ risk_score }}%</h3>
+
+<p>Detected phrases: {{ phrases }}</p>
+
+<p>{{ advice }}</p>
+
+<br>
+
+<a href="https://cybercrime.gov.in" target="_blank">
+<button class="report">Report to Cyber Crime Portal</button>
+</a>
+
+</div>
+
+</body>
+</html>
